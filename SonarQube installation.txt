@@ -1,0 +1,133 @@
+1.
+choose instance RHEL -- > t2.medium --> sg:All TCP -anywhere.---> lunch
+
+
+now getting into git bash or mac
+
+ssh -i "NVERGINIAPEM30JUNE22.pem" ec2-user@ec2-35-172-183-87.compute-1.amazonaws.com --->Login into RHEL server
+
+2.Switch to root user
+     $ sudo -i
+3.install wget
+  # sudo yum install wget  -y
+
+4. install unzip 
+$ sudo yum install wget unzip -y
+
+5.Install java open jdk-8
+$ sudo yum install java-1.8.0-openjdk
+
+Now check java is install are not 
+ $ java -version
+
+now install SonarQube web server
+cd /opt  -->change directory
+
+7. sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.6.zip
+
+8.unzip sonar
+  # sudo unzip sonarqube-7.6.zip
+
+9.adduser sonar
+# sudo adduser sonar
+
+10. Give normal user acess
+#visudo
+root    ALL=(ALL)         ALL= ALL
+sonar ALL=(ALL)        NOPASSWD: ALL
+
+11.give permission as a normal user
+
+# sudo chown -R sonar:sonar /opt/sonarqube-7.6/
+# sudo chmod -R 775 /opt/sonarqube-7.6
+
+8.cd..
+cd sonar/
+ls
+ 
+$cd bin/
+$ ls
+$cd linux-x86-64
+$ls
+
+if above 8 step in to a single cmd
+ $cd /opt/sonarqube-7.6/bin/linux-x86-64/
+
+9.go to see list in linux
+$ls
+
+After
+$ ./sonar.sh
+Usage: ./sonar.sh { console | start | stop | restart | status | dump }
+
+now u can start  r  stop r check staus
+use this below cmds
+10.   ./sonar.sh start
+
+Starting SonarQube...
+SonarQube is already running.
+
+          ./sonar.sh status
+       
+ SonarQube is running (34310).
+
+11.if want change default SonarWeb port use 
+$cd conf/
+
+$ls
+ sonar.properties
+$vi sonar.properties
+
+ TCP port for incoming HTTP connections. Default value is 9000.
+#sonar.web.port=9000
+
+for example
+
+9000 -->9999
+any port number u give.
+Again the sonar server restart
+12.$  ./sonar.sh restart
+if it is not Runnig
+#cd ../../logs/
+#cat sonar.log
+shows the what is the error
+to sove
+#sudo rm -rf /opt/sonar-7.6/temp  ---> delete it temp dir
+---------------------------------------------------------------------
+Stopping SonarQube...
+Waiting for SonarQube to exit...
+Stopped SonarQube.
+Starting SonarQube...
+Started SonarQube.
+
+
+NOW U COPY THE SONAR PUBLIC IP AND PAST INTO BROWSER
+
+http://35.172.183.87:9000/ --->this is sonar web link
+
+
+        
+[sonar@ip-172-31-20-72 opt]$ ls
+sonarqube-7.6  sonarqube-7.6.zip
+[sonar@ip-172-31-20-72 opt]$ cd sonarqube-7.6
+[sonar@ip-172-31-20-72 sonarqube-7.6]$ ls
+bin  conf  COPYING  data  elasticsearch  extensions  lib  logs  temp  web
+[sonar@ip-172-31-20-72 sonarqube-7.6]$ cd bin/
+[sonar@ip-172-31-20-72 bin]$ cd linux-x86-64
+[sonar@ip-172-31-20-72 linux-x86-64]$ ls
+lib  SonarQube.pid  sonar.sh  wrapper
+[sonar@ip-172-31-20-72 linux-x86-64]$ ./sonar.sh start
+Starting SonarQube...
+SonarQube is already running.
+[sonar@ip-172-31-20-72 linux-x86-64]$
+
+
+
+
+
+
+
+
+
+
+ 

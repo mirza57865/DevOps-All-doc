@@ -1,0 +1,55 @@
+                              Ansible installation
+--------------------------------------------------------------------------------------------
+connect to the ansible master
+#sudo -i
+ 
+1.add user
+#sudo useradd ansible
+#sudo passwd ansible
+
+new passwd: ansible
+Retype passwd: ansible
+
+2.passwd Auth in the file
+#sudo vi /etc/ssh/sshd_config
+
+search the  :/passwdAuth 
+uncomment first and 3rd one comment true as a fals
+after
+3.restart ansible server
+#sudo service sshd restart 
+4.ansible root access
+#visudo
+ansible ALL=(ALL)    NOPASSWD: ALL
+5.switch to the ansible user
+#sudo su ansible
+6.install python3
+#sudo yum install python3 -y
+7.update pythin alternatives 
+#sudo alternatives --set python /usr/bin/python3
+#python --version
+8.install PIP
+#sudo yum -y install python3-pip
+9.install ansible using PIP
+#pip3 install ansible --user
+#ansible --version
+
+10. Create ansible folder under /etc/
+#sudo mkdir /etc/ansible
+#sudo chown ansible:ansible -R /etc/ansible
+11.Create ansible.cfg file under /etc/ansible.And paste complete content from below
+git link
+----------------------------------------------------------------------------------------------------
+https://github.com/bvenkydevops/ansible_hosts_file_content/blob/main/ansible.cfg
+------------------------------------------------------------------------------------------------------------------
+#vi /etc/ansible/ansible.cfg
+
+12.Create hosts file under /etc/ansible.sample content file
+-----------------------------------------------------------------------------------------------
+https://github.com/bvenkydevops/ansible_hosts_file_content/blob/main/hostscontent
+-------------------------------------------------------------------------------------------------------------------------
+#vi /etc/ansible/hosts
+ ansible_user=ec2-user ansible_ssh_private_key_file=~/venky28july22.pem
+13.create ansible pemfile folder
+vi venky28july22.pem
+ 
