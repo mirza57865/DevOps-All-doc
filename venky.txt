@@ -1,0 +1,37 @@
+#!/bin/bash            --->shebang
+apt-get update -y
+apt install apache2 -y
+apt install maven -y
+service apache2 start
+chkconfig apache2 on
+mkdir /var/www/html
+echo 'this the first server MY ALB-SERVER-01'> /var/www/html/index.html
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Vi Editor
+-------------
+Basic editor in linux
+
+To create a file
+i  - to go to insert mode
+
+:wq  -- save and exit
+
+:q!  -- exit without saving
+
+Default mode - command mode
+
+
+Esc - to come out of insert mode  to command mode
+dd   - to delete a line
+
+yy  --  to copy the line
+p  - to paste  below
+
+++++++++++++++++++++++++++++++++++++++++++++++
