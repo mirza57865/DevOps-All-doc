@@ -1,8 +1,5 @@
-https://github.com/MithunTechnologiesDevOps ---->for war,jar files
 
-
-
-                                 INSTALL NEXUS 
+                                       INSTALL NEXUS  IN REDHAT SERVER
    ----------------------------------------------------------------------------------------------
 1.logn as a Root user 
 $sudo -i

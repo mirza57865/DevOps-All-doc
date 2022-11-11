@@ -1,4 +1,5 @@
-1.
+                       INSTALL SONARQUBE IN REDHAT SERVER
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++             
 choose instance RHEL -- > t2.medium --> sg:All TCP -anywhere.---> lunch
 
 

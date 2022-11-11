@@ -1,37 +1,33 @@
-                                    Tomcat installation
+                                    Tomcat installation(RED HAT SERVER )
 ------------------------------------------------------------------------------------------------------
 1.login as a Root User
 $sudo -i
-
 2.chenge to opt Dir
 #cd /opt/
-
 3.Install java rpm
 #sudo yum install java-1.8.0-openjdk
-
 https://tomcat.apache.org/download-90.cgi   ---->search in google
+#sudo yum install wget -y
 
-
-https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
-
-
-#sudo tar -xvzf apache-tomcat-9.0.65.tar.gz
+# sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.zip
+#yum install unzip -y
+#sudo unzip apache-tomcat-9.0.68.zip
+#cd apache-tomcat-9.0.68
+#cd ../
+#cd apache-tomcat-9.0.68
 
 give executing permissions to startup.sh and shutdown.sh which are under bin.
- chmod u+x /opt/tomcat9/bin/*.sh
-cd /opt/tomcat9/
-cd logs/
-cd ../bin/
-sh startup.sh
-
-
-
+ # chmod u+x *.sh
+# cd /opt/apache-tomcat-9.0.68/
+# cd ../bin/
+# sh startup.sh
+./sh startup.sh
 
 create link files for tomcat startup.sh and shutdown.sh
 
-ln -s /opt/apache-tomcat-9.0.65/bin/startup.sh /usr/local/bin/tomcatup
-ln -s /opt/apache-tomcat-9.0.65/bin/shutdown.sh /usr/local/bin/tomcatdown
-tomcatup
+ln -s /opt/apache-tomcat-9.0.68/bin/startup.sh /usr/local/bin/start
+ln -s /opt/apache-tomcat-9.0.68/bin/shutdown.sh /usr/local/bin/stop
+
 Check point :
 access tomcat application from browser on port 8080
 
@@ -41,22 +37,27 @@ Using unique ports for each application is a best practice in an environment. Bu
 cd /opt/apache-tomcat-9.0.65/conf
 # update port number in the "connecter port" field in server.xml
 # restart tomcat after configuration update
-tomcatdown
-tomcatup
+stop
+start
 Check point :
 Access tomcat application from browser on port 8090
 
 http://<Public_IP>:8090
 now application is accessible on port 8090. but tomcat application doesnt allow to login from browser. changing a default parameter in context.xml does address this issue
 #search for context.xml
-find / -name context.xml
+# find / -name context.xml
 above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes. At the time of writing this lecture below 2 files are updated.
 /opt/tomcat/webapps/host-manager/META-INF/context.xml
 /opt/tomcat/webapps/manager/META-INF/context.xml
+un comment that manager tag
+begin value inthis line only
+<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
 
 # Restart tomcat services
-tomcatdown  
-tomcatup
+stop
+start
 Update users information in the tomcat-users.xml file goto tomcat home directory and
  Add below users to conf/tomcat-users.xml file
 #cd ../
@@ -67,13 +68,7 @@ ls
 paste here
 inthat file end </tomcat-user>
 --------------------------------------------------------------------------------------
- <role rolename="manager-gui"/>
- <role rolename="manager-script"/>
- <role rolename="manager-jmx"/>
- <role rolename="manager-status"/>
- <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
- <user username="deployer" password="deployer" roles="manager-script"/>
- <user username="admin" password="admin" roles="manager-gui"/>
+ <user username="admin" password="admin" roles="admin-gui,manager-gui" />
 -----------------------------------------------------------------------------------------------------
 portno:8080
 magerapp:
