@@ -1,0 +1,125 @@
+What is Linux package management?
+In Linux Package Managers are essentially software applications that help users to: Search, Download, Install, Remove and Update software applications on their computer operating system.
+ These can be either Command Line tools or a complete Graphical User Interface application
+
+
+
++++++++++++++++++++++++++++++++
+ Is APT a package manager?
+The APT package manager is an advanced package management tool. Using its core libraries, it facilitates the process of installation and uninstallation of Linux software packages. It is also used to maintain and upgrade installed packages. 
+The APT package manager depends on repositories.
++++++++++++++++++++++++++++++++++++++
+Is YUM a package manager?
+YUM (Yellowdog Updater Modified) package manager is a free open source front-end to RPM package manager and provides enhanced capabilities
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+What is apt and yum?
+Yum automatically refreshes the list of packages, whilst with apt-get you must execute a command 'apt-get update' to get the fresh packages. Another difference is upgrading all the packages
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The differences between yum and apt-get are generally divided into two main categories: 
+1. redHat series: Redhat, Centos, Fedora,Amazon-linux-ec2,susu etc. ---->YUM
+
+ 2. debian series: Debian, Ubuntu --->APT 
+
+1 Common installation package format rpm packages, the command for installing the rpm Package is the difference between & ldqu yum and apt-get.
+ Generally, the famous linux system is basically divided into two categories:
+
+1. RedHat series: Redhat, Centos, Fedora, etc.
+
+2. Debian series: Debian, Ubuntu, etc.
++++++++++++++++++++++++++++++++++
+RedHat series
+1. the common installation package format is rpm. the command for installing the rpm package is "rpm-parameter"
+
+2 package management tool yum
+
+3. support for tar packages
+
+
+Debian series
+1. the common installation package format is deb. the command for installing deb package is "dpkg-parameter"
+
+2 package management tool apt-get
+++++++++++++++++++++++++++++++++++++++
+Common yum commands
+
+# Install xxx software in yum install xxx
+
+# Yum info xxx view xxx software information
+
+# Yum remove xxx delete a software package
+
+# Yum list listing software packages
+
+# Yum clean
+
+# Yum provides xxx search package with xxx as the keyword (the provided information is the keyword)
+
+# Yum search xxx search package (name-based keyword)
+
+# Yum groupupdate xxx
+
+# Yum grouplist xxx
+
+# Yum groupremove xxx
+
+All three are in a group to perform the upgrade list and delete operations .. For example, "Mysql Database" is a group that operates all related software packages at the same time;
+
+# Yum update system upgrade
+
+# Yum list available lists all packages on the upgrade source;
+
+# Yum list updates lists all update packages on the upgrade source;
+
+# Yum list installed: list installed packages;
+
+# Yun update kernel upgrade kernel;
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Common APT command parameters:
+
+Apt-cache search package
+
+Apt-cache show package obtains package information, such as description, size, and version.
+
+Sudo apt-get install package installation package
+
+Sudo apt-get install package--reinstall re-installation package
+
+Sudo apt-get-f install fix and install "-f = -- fix-missing"
+
+Sudo apt-get remove package Delete package
+
+Sudo apt-get remove package--purge delete a package, including deleting a configuration file.
+
+Sudo apt-get update source
+
+Sudo apt-get upgrade updates installed packages
+
+Sudo apt-get dist-upgrade system
+
+Sudo apt-get dselect-upgrade using dselect
+
+Apt-cache depends package for dependency usage
+
+Apt-cache rdepends package is used to check which packages are dependent on this package.
+
+Sudo apt-get build-dep package installation-related compilation environment
+
+Apt-get source package download the source code of the package
+
+Sudo apt-get clean & sudo apt-get autoclean clear useless packages
+
+Sudo apt-get check whether any corrupted dependency exists
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+SUB: Requesting for Work From Home
+
+hi madam,
+                  I am <name> and my empid:<id>.I'd like to request the ability to work from home because I have a sick family members.
+I want to make sure I stay away from the rest of the team in case I'm contagious. So please accept my request madam.
+thanks&Regards
+<your name>
+

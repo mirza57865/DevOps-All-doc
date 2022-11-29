@@ -1,0 +1,26 @@
+security group:-
+         A security group controls the traffic that is allowed to reach leave the resources that it is associated with.
+         for example: after you associate a security group with an EC2 instance, it controls the inbound rules and outbound rules traffic for the instance,
+                      it comes a default security group
+Load balancer:- 
+            it is servers as the single point of contact for clients. the load balancer distributes incoming application traffic across multiple targets,such as EC2instances,
+             in multiple availability zones. this increases the availability of your application.
+    
+Load balancer types:
+1- application load balancer: 
+      An apllication load balancer makes routing decisions at the application layer(HTTP/HTTPS),
+      supports path-based routing,and can route requests to one or more ports on each container instance in your cluster.
+     application load balancers support dynamic host port mapping.
+2- network load balancer:-
+   A network load balancer makes routing decisions at the transport layer(TCP/SSL).it can handle millions of request per second.after the load balancer receives a connection,
+   it selects a target group for the default rule using a flow hashrouting algorithm.
+    network lb support dynamic host port mapping .
+3- classic load balancer:-
+     it provides basic load balancing across multiple amazon EC2 instances and operates at both the request level and connection level.
+     clb is intended for applications that are built within the EC2 classic network . 
+
+S3(SIMPLE STORAGE SERVICE):
+    it is an object storage service that stores data as objects with in buckets an object is a file and any metadata that describes the fike. A bucket is a container for objects.
+    to store your data in amazon s3.you first create a ucket and specify a bucket name and aws region.
+ using: store and retrieve any amount of data at any time,from anywhere
+        

@@ -1,0 +1,90 @@
+                             JENKINS INSTALLATION IN REDHAT SERVER
+===================================================================
+
+https://www.oracle.com/java/technologies/downloads/
+https://www.oracle.com/java/technologies/downloads/#license-lightbox
+-------------------------------------------------------------------------------------------------------
+1.Login as a root user
+#sudo -i
+#cd /opt/
+
+2.install java 
+
+-----------------------------------------------------------------------------------------
+##Change dir to /opt
+cd /opt
+yum install wget -y
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+yum install jdk-8u131-linux-x64.rpm -y
+
+java -version
+OtherWise
+ sudo yum install java-1.8.0-openjdk
+
+
+ sudo su -
+
+yum install wget -y
+
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum install fontconfig java-11-openjdk -y
+yum install jenkins -y
+systemctl enable jenkins
+
+systemctl start jenkins
+
+systemctl status jenkins
+
+ 
+
+
+
+
+
+-----------------------------------------------------------------------------------
+3.install git
+sudo yum install git -y
+
+4.install maven 
+sudo yum  install maven -y
+
+5.install wget and epel
+sudo yum install wget -y
+sudo yum install epel -y
+
+6.install rpm file of jenkins and key
+goto google and search ------jenkins.io----
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+7.install jenkins
+sudo yum install jenkins -y
+
+8.enable jenkins 
+ #cd /usr/lib/systemd/system/jenkins.service
+ sudo systemctl enable jenkins
+goto this dir and execute
+cd /usr/lib/systemd/systemd-sysv-install enable jenkins
+step by step go dirs
+# ./systemd-sysv-install enable jenkins
+
+again back /opt dir
+#cd ../../../../opt/
+9.start jenkins and see status
+#sudo systemctl start jenkins
+#sudo systemctl status jenkins
+
+----------------------------------------------------------------------------------------
+copy jenkins public ip paste in browser and with port no 8080
+http://18.209.46.73:8080/
+passwrd:
+in server #cd /var/lib/jenkins/secrets/initialAdminPassword
+93bdd24716734b129bf9d5ef7fc45228
+in jenkins browser
+----------------------------------------------------------------------------------------
+setup and installed suggested plugins
+ 
+
+
