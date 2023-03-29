@@ -1,0 +1,31 @@
+1.login as a root user
+#sudo -i
+cd /
+2.install nfs and update it 
+#sudo apt-get update && sudo apt-get install nfs-common -y
+3.Now create a directory
+#sudo mkdir /efs 
+
+before we have to create EFS and add mount targets now copy the <EFS DNS name>
+4.Mount the EFS file system:
+#sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-045c225b4438d370b.efs.ap-northeast-1.amazonaws.com:/ efs
+now we have to check it is mount are not
+#df -h
+now it will display like below:
+ubuntu@ip-172-31-14-135:~$ df -h
+Filesystem                                               Size  Used Avail Use% Mounted on
+/dev/root                                                7.6G  2.2G  5.5G  29% /
+tmpfs                                                    484M     0  484M   0% /dev/shm
+tmpfs                                                    194M  880K  193M   1% /run
+tmpfs                                                    5.0M     0  5.0M   0% /run/lock
+/dev/xvda15                                              105M  6.1M   99M   6% /boot/efi
+tmpfs                                                     97M  4.0K   97M   1% /run/user/1000
+fs-045c225b4438d370b.efs.ap-northeast-1.amazonaws.com:/  8.0E     0  8.0E   0% /efs
+ubuntu@ip-172-31-14-135:~$
+
+
+
+
+now we have to install Redhat or Amazon linux -2 
+cmds: 1.Red hat --->sudo yum install nfs-utils -y
+      2.Amazon-Linux-2 ---->sudo yum install amazon-efs-utils -y
