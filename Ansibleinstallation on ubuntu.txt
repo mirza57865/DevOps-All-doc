@@ -1,0 +1,30 @@
+1. lunch instance-ubuntu
+2. switch to root user-- sudo -i
+3. Add user -- adduser <username> And give password .
+4.Make Ansible user as a Sudour -- visudo --> under root give like this
+        <Username>  ALL=(ALL) NOPASSWD:ALL Cntrl+x,Y,enter
+5.Change passwdlessAuthentication --- vim /etc/ssh/sshd_config -- PasswdlessAuth change to "yes".
+6. Restart sh service -- service ssh restart
+NOTE : in remote servers also do this 6 steps
+++++++++++++++++++++++++++++++++++++++++++++++++++
+This steps do only on ANSIBLE controller or MASTER NODE 7 to 12.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7.Install Ansible
+  1.  sudo apt-add-repository ppa:ansible/ansible
+  2. sudo apt update -y
+  3. sudo apt install ansible -y
+   ansible --version
+ansible [core 2.14.3]
+  config file = /etc/ansible/ansible.cfg
+
+
+8. switch to user -- su venky
+ --cd , pwd -- 
+9. generate keys -- ssh-keygen
+10. add remote servers -- ssh-copy-id <private ip of remote servers>
+                        EX: ssh-copy-id 172.31.15.252 -- yes -- passwd of user ,enter
+11. Add remote servers private ip in myhosts file-- vi myhosts
+12.check All remote servers connection is success or not by using this bellow cmd
+      ansible all -i myhosts -m ping 
+if it shows Green color it is success otherwise it not connect successfully
+ 

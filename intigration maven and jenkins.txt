@@ -1,0 +1,78 @@
+1----install java cmd : yum install java -y
+2--- install maven  cmd :yum install maven -y
+3--- install git cmd: yum install git -y
+3----create a sample java project by using maven
+      1-- mvn archetype:generate
+      2--- something number enter ex: 2007 or 2009 or 1968
+      3--- group id  ex: com.flipkart
+      4.--- artifact id ex: sample-java-project  -- project name
+      5---- version select --- 1 to 8
+      2 times enter press
+      6.-- yes or no -- > type Y
+now we have to install jenkins 
+cmd : download repo for jenkins in available in <JENKINS.IO>
+start jenkins----jenkins
+
+setup the jenkins ---in GUI  ---- and install maven integration plugin
+ come back to the terminal --- got to opt dir --- > cd /opt/ where the project is available.
+ now 1. git init
+     2. git add .
+     3. git commit -m "commit name"
+     4. git push -u origin master
+     now enter github credentials
+    now goto Github repo see the all files available or not
+  now take the project URL ---Goto jenkins create a jenkinks job --
+                                                                 1. select freestyle or maven project
+								  2.configure the job under SCM -- paste url 
+								3. build ---select the maven toplevel  and give the build goals 
+									like mvn clean package and save and BUILD NOW.
+                     now see the console output.
+
+
+
+EX:  1.  Source Code Management
+  
+   Git?
+  
+  Repository URL?
+https://github.com/bvenkydevops/maven.git
+Credentials?
+
+admin/****** (jenkins)
+ 
+
+Branches to build?
+Branch Specifier (blank for 'any')?
+*/master
+
+
+
+3.  Build Environment
+
+
+Add timestamps to the Console Output
+
+
+
+4. Pre Steps
+
+Invoke top-level Maven targets?
+
+Maven Version ?
+
+maven Goals
+clean package
+
+ 
+5.  Build
+
+  Root POM?
+   pom.xml
+  Goals and options?
+  clean package
+ 
+now build now
+
+check in the server terminal cd /var/lib/jenkins/workspace/maven-project/webapp/target/webapp.war
+now we have to see the package of maven
+
