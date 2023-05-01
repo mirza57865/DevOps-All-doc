@@ -309,6 +309,14 @@ sudo service docker start
 sudo service docker status
  sudo chmod 666 /var/run/docker.sock
 sudo chmod g+rw /var/run/docker.sock
++++++++++++++++++++++
+apt-get update -y
+  165  sudo chmod g+rw /var/run/docker.sock
+  166  sudo service docker start
+
+
+
++++++++++++++++
 docker build -t image1 .
 docker container run -d -p 3000:3000 image1 npm run start
 docker tag images:0.1 bojjavenkatesh/nodejs:0.1
