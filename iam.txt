@@ -6,7 +6,7 @@ Aws: https://drive.google.com/folderview?id=1B9xFvIqL2F78ZAuKz3NfSMyKqmWUXiOe
 
 
 git token 
-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
+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
 
 e5a748584b3946a387873e0724a23d28
 jenkins adminstration passwd
