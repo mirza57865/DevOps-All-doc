@@ -41,7 +41,7 @@ sonar ALL=(ALL)        NOPASSWD: ALL
 
 # sudo chown -R sonar:sonar /opt/sonarqube-7.6/
 # sudo chmod -R 775 /opt/sonarqube-7.6
-
+#   su sonar
 8.cd..
 cd sonar/
 ls
