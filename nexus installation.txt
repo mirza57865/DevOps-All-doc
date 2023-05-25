@@ -7,7 +7,7 @@ $sudo -i
 2.install wget and java
 
 #sudo yum install wget -y
-#sudo yum  install java-1.8*     -->ubuntu -->sudo apt-get install openjdk-8-jdk -y
+#sudo yum install java-1.8.0-openjdk     -->ubuntu -->sudo apt-get install openjdk-8-jdk -y
 
 3.now install Sonatype Nexus web server
 #cd /opt/  -->change directory
